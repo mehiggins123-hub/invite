@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  overflow: hidden;
+}
+
+.scene {
+  display: none;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.scene.active {
+  display: block;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Scene 1 */
+.character-select {
+  text-align: center;
+  padding-top: 460px;
+}
+
+.doll-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.doll-icon {
+  width: 145px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.doll-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Scene 2 */
+.wardrobe {
+  position: absolute;
+  top: 300px;
+  left: 260px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* space between shelves */
+}
+
+.shelf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 0 3px white; /* outer white outline */
+}
+
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: purple;
+  cursor: pointer;
+}
+.arrow:hover {
+  color: hotpink;
+}
+
+.item-shoes, .item-tops, .item-bottoms {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+
+
+.doll-area {
+  position: absolute;
+  right: 250px;
+  top: 320px;
+  width: 320px;
+  height: 520px;
+}
+
+.doll, .clothing-layer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+#doneBtn {
+  position: absolute;
+  bottom: 40px;
+  left:560px;
+  padding: 10px 20px;
+}
+.item-crop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Remove overflow:hidden */
+}
+.item-shoes, .item-tops, .item-bottoms {
+  width: 80px; /* make smaller or bigger here */
+  height: auto;
+  object-fit: contain; /* keeps aspect ratio */
+}
+
+
+/* Scene 3 */
+.final-look {
+  position: relative; /* crucial for absolute children positioning */
+  width: 320px;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+  top: 300px;
+  left: 0;
+  transform: none;
+}
+
+/* Dolls and clothing layers stay absolutely positioned inside .final-look */
+.final-look .doll,
+.final-look .clothing-layer {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Buttons styles */
+.print-btn,
+.restart-btn {
+  position: fixed; /* now relative to the screen, not the final-look div */
+  padding: 10px 24px;
+  font-size: 16px;
+  background-color: #fcddec;
+  border: 2px solid #cc6699;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive;
+  color: #333;
+  z-index: 1000;
+}
+
+.print-btn {
+  bottom: 40px;
+  left: 400px;
+}
+
+.restart-btn {
+  bottom: 40px;
+  left: 500px;
+}
+
+/* Hide print layout normally */
+#print-layout {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 9999;
+}
+
+#print-layout .print-bg {
+  position: relative;
+  width: 600px;
+  height: 800px;
+  margin: auto;
+  background-image: url("images/backgrounds/scene3-print.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+
+/* Container for the doll and clothes */
+#print-doll-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 500px;
+  pointer-events: none;
+}
+

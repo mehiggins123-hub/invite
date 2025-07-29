@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Scene 1: Character Select -->
+<div class="scene" id="scene1">
+  <img src="images/backgrounds/scene1.png" class="background" alt="">
+  <div class="character-select">
+    <div class="doll-options">
+      <img src="images/dolls/icon1.png" class="doll-icon" data-doll="doll1.png">
+      <img src="images/dolls/icon2.png" class="doll-icon" data-doll="doll2.png">
+      <img src="images/dolls/icon3.png" class="doll-icon" data-doll="doll3.png">
+      <img src="images/dolls/icon4.png" class="doll-icon" data-doll="doll4.png">
+      <img src="images/dolls/icon5.png" class="doll-icon" data-doll="doll5.png">
+    </div>
+  </div>
+</div>
+
+  <!-- Scene 2: Dress-Up -->
+  <div class="scene" id="scene2">
+    <img src="images/backgrounds/scene2.png" class="background" alt="">
+    <div class="wardrobe">
+      <!-- Top Shelf: Shoes -->
+      <div class="shelf">
+        <div class="preview-box">
+          <button class="arrow left" data-type="shoes">←</button>
+          <div class="item-crop crop-shoes">
+            <img class="shelf-item item-shoes" id="shoesPreview" 
+               src="images/clothes/shoes/previews/shoe1_preview.png" 
+               data-type="shoes" 
+               data-full="images/clothes/shoes/full/shoe1.png">
+
+          </div>
+          <button class="arrow right" data-type="shoes">→</button>
+        </div>
+      </div>
+
+
+      <!-- Middle Shelf: Tops -->
+      <div class="shelf">
+        <div class="preview-box">
+          <button class="arrow left" data-type="tops">←</button>
+          <div class="item-crop crop-tops">
+            <img class="shelf-item item-tops" id="topsPreview" 
+               src="images/clothes/tops/previews/top1_preview.png" 
+               data-type="tops" 
+               data-full="images/clothes/tops/full/top1.png">
+          </div>
+          <button class="arrow right" data-type="tops">→</button>
+        </div>
+      </div>
+
+
+      <!-- Bottom Shelf: Bottoms -->
+      <div class="shelf">
+        <div class="preview-box">
+          <button class="arrow left" data-type="bottoms">←</button>
+          <div class="item-crop crop-bottoms">
+            <img class="shelf-item item-bottoms" id="bottomsPreview" 
+               src="images/clothes/bottoms/previews/bottom1_preview.png" 
+               data-type="bottoms" 
+               data-full="images/clothes/bottoms/full/bottom1.png">
+          </div>
+          <button class="arrow right" data-type="bottoms">→</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="doll-area">
+      <img id="baseDoll" src="" class="doll">
+      <img id="topsLayer" class="clothing-layer">
+      <img id="bottomsLayer" class="clothing-layer">
+      <img id="shoesLayer" class="clothing-layer">
+    </div>
+    <button id="doneBtn">Done</button>
+  </div>
+
+  <!-- Scene 3: Final Look -->
+  <div class="scene" id="scene3">
+    <img src="images/backgrounds/scene3.png" class="background" alt="">
+    <div class="final-look">
+      <img id="finalDoll" class="doll">
+      <img id="finalTops" class="clothing-layer">
+      <img id="finalBottoms" class="clothing-layer">
+      <img id="finalShoes" class="clothing-layer">
+
+    <button class="print-btn">Print</button>
+      <button class="restart-btn">Return to Start</button>
+    </div>
+  </div>
+
+  <!-- Hidden layout for printing -->
+  <div id="print-layout">
+    <div class="print-bg">
+      <div class="print-doll-container" id="print-doll-container"></div>
+    </div>
+  </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
